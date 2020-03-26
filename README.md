@@ -1,99 +1,44 @@
-<!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
-<p align="center">
-  <a href="https://www.gatsbyjs.org">
-    <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby's default starter
-</h1>
+# Next with Antd
 
-Kick off your project with this default boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
+A simple example for showing how to initialize your frontend project with next.js and antd.
 
-_Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://www.gatsbyjs.org/docs/gatsby-starters/)._
+![screenshot](screenshot.png)
 
-## 🚀 Quick start
+- [Including plain css files in Next.js project](https://github.com/zeit/next.js/tree/master/examples/with-global-stylesheet)
+- [Ant.design layout example](https://ant.design/components/layout/)
 
-1.  **Create a Gatsby site.**
+## Bundle Sizes
 
-    Use the Gatsby CLI to create a new site, specifying the default starter.
+### Development: npm run dev -> 2680KB
 
-    ```shell
-    # create a new Gatsby site using the default starter
-    gatsby new my-default-starter https://github.com/gatsbyjs/gatsby-starter-default
-    ```
+Name | Status | Type | Initiator | Size | Time
+-- | -- | -- | -- | -- | --
+localhost | 200OK | document | Other | 474 KB / 474 KB | 920 ms902 ms
+index.js?ts=1553059908721/_next/static/development/pages | 200OK | script | (index)Parser | 1.7 MB / 1.7 MB | 253 ms13 ms
+_app.js?ts=1553059908721/_next/static/development/pages | 200OK | script | (index)Parser | 348 KB / 347 KB | 16 ms12 ms
+webpack.js?ts=1553059908721/_next/static/runtime | 200OK | script | (index)Parser | 34.1 KB / 33.8 KB | 13 ms13 ms
+main.js?ts=1553059908721/_next/static/runtime | 200OK | script | (index)Parser | 880 KB/ 879 KB | 45 ms14 ms
 
-1.  **Start developing.**
 
-    Navigate into your new site’s directory and start it up.
 
-    ```shell
-    cd my-default-starter/
-    gatsby develop
-    ```
+### After build: npm run build && npm start -> 1310KB
 
-1.  **Open the source code and start editing!**
+Name | Status | Type | Initiator | Size | Time
+-- | -- | -- | -- | -- | --
+localhost | 200OK | document | Other | 470 KB / 470 KB | 177 ms174 ms
+index.js/_next/static/o_DHRDq7ZCnL_FwLl6DHG/pages | 200OK | script | (index)Parser | 1.1 MB / 1.1 MB | 37 ms13 ms
+_app.js/_next/static/o_DHRDq7ZCnL_FwLl6DHG/pages | 200OK | script | (index)Parser | 2.9 KB/ 2.6 KB | 13 ms13 ms
+webpack-f0c6edbea5b547edc23f.js/_next/static/runtime | 200OK | script | (index)Parser | 1.7 KB / 1.5 KB | 16 ms15 ms
+commons.649e134287af54e585ca.js/_next/static/chunks | 200OK | script | (index)Parser | 190 KB / 190 KB | 23 ms15 ms
+main-7e3858c4094762b6abe9.js/_next/static/runtime | 200OK | script | (index)Parser | 15.9 KB / 15.6 KB | 21 ms15 ms
 
-    Your site is now running at `http://localhost:8000`!
 
-    _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._
 
-    Open the `my-default-starter` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
+### Production (gzipped) -> 386KB
 
-## 🧐 What's inside?
-
-A quick look at the top-level files and directories you'll see in a Gatsby project.
-
-    .
-    ├── node_modules
-    ├── src
-    ├── .gitignore
-    ├── .prettierrc
-    ├── gatsby-browser.js
-    ├── gatsby-config.js
-    ├── gatsby-node.js
-    ├── gatsby-ssr.js
-    ├── LICENSE
-    ├── package-lock.json
-    ├── package.json
-    └── README.md
-
-1.  **`/node_modules`**: This directory contains all of the modules of code that your project depends on (npm packages) are automatically installed.
-
-2.  **`/src`**: This directory will contain all of the code related to what you will see on the front-end of your site (what you see in the browser) such as your site header or a page template. `src` is a convention for “source code”.
-
-3.  **`.gitignore`**: This file tells git which files it should not track / not maintain a version history for.
-
-4.  **`.prettierrc`**: This is a configuration file for [Prettier](https://prettier.io/). Prettier is a tool to help keep the formatting of your code consistent.
-
-5.  **`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.org/docs/browser-apis/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
-
-6.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you’d like to include, etc. (Check out the [config docs](https://www.gatsbyjs.org/docs/gatsby-config/) for more detail).
-
-7.  **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.org/docs/node-apis/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
-
-8.  **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://www.gatsbyjs.org/docs/ssr-apis/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
-
-9.  **`LICENSE`**: Gatsby is licensed under the MIT license.
-
-10. **`package-lock.json`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. **(You won’t change this file directly).**
-
-11. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
-
-12. **`README.md`**: A text file containing useful reference information about your project.
-
-## 🎓 Learning Gatsby
-
-Looking for more guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.org/). Here are some places to start:
-
-- **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.org/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
-
-- **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.org/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
-
-## 💫 Deploy
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
-
-[![Deploy with ZEIT Now](https://zeit.co/button)](https://zeit.co/import/project?template=https://github.com/gatsbyjs/gatsby-starter-default)
-
-<!-- AUTO-GENERATED-CONTENT:END -->
+* 470K -> 57K index.html
+* 2.6K -> 1.1K _app.js
+* 190K -> 61K commons.649e134287af54e585ca.js
+* 1.1M -> 261K index.js
+* 16K -> 5.3K main-7e3858c4094762b6abe9.js
+* 1.5K -> 769B webpack-f0c6edbea5b547edc23f.js
